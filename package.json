@@ -1,0 +1,39 @@
+{
+  "name": "normalize-path-sep",
+  "version": "0.0.0",
+  "description": "normalize path sep",
+  "license": "MIT",
+  "repository": "akameco/normalize-path-sep",
+  "author": "akameco <akameco.t@gmail.com> (akameco.github.io)",
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "add-contributor": "all-contributors add",
+    "precommit": "lint-staged",
+    "fmt": "prettier --write '**/*.{js,json,md}'",
+    "flow": "flow",
+    "lint": "eslint .",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:ci": "npm run validate",
+    "validate": "npm run lint && npm run flow && npm run test"
+  },
+  "lint-staged": {
+    "*.js": ["fmt", "validate", "git add"],
+    "*.json": ["fmt", "git add"]
+  },
+  "files": ["index.js"],
+  "keywords": [""],
+  "dependencies": {},
+  "devDependencies": {
+    "all-contributors-cli": "^4.10.0",
+    "eslint": "^4.12.1",
+    "eslint-config-precure": "^0.11.2",
+    "flow-bin": "^0.60.1",
+    "husky": "^0.14.3",
+    "jest": "^21.2.1",
+    "lint-staged": "^6.0.0",
+    "prettier": "^1.8.2"
+  }
+}
