@@ -6,11 +6,11 @@
   "repository": "akameco/normalize-path-sep",
   "author": "akameco <akameco.t@gmail.com> (akameco.github.io)",
   "engines": {
-    "node": ">=4"
+    "node": ">=6"
   },
   "scripts": {
     "add-contributor": "all-contributors add",
-    "precommit": "lint-staged",
+    "precommit": "lint-staged && npm run validate",
     "fmt": "prettier --write '**/*.{js,json,md}'",
     "flow": "flow",
     "lint": "eslint .",
@@ -20,8 +20,7 @@
     "validate": "npm run lint && npm run flow && npm run test"
   },
   "lint-staged": {
-    "*.js": ["fmt", "validate", "git add"],
-    "*.json": ["fmt", "git add"]
+    "*.{js,json}": ["prettier --write", "git add"]
   },
   "files": ["index.js"],
   "keywords": [""],
